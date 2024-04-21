@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fw-bold: 700;
+    --fw-semibold: 500;
+
+    --ff-sans: "Montserrat", sans-serif;
+    /*500, 700*/
+    --ff-serif: "Fraunces", serif;
+    /*700*/
+
+    --clr-primary-cyan: hsl(158, 36%, 37%);
+    --clr-primary-cream: hsl(30, 38%, 92%);
+
+    --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+    --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+    --mg-sm: 580px;
+    --md-lg: 1440px;
+
+    font-size: 14px;
+    /* -> 1rem*/
+}
+
+body {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+
+    /* margin-block: 5rem; */
+    padding: 1rem;
+
+    font-family: var(--ff-sans);
+    font-size: 1rem;
+    color: var(--clr-neutral-dark-blue);
+    background-color: var(--clr-primary-cream);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2.5rem;
+    border-radius: 1rem;
+
+    background-color: var(--clr-neutral-white);
+}
+
+.card-img {
+    border-radius: 1rem 0em 0em 1rem;
+}
+
+.card-img-mob {
+    border-radius: 1rem 1rem 0em 0rem;
+    display: none;
+}
+
+.card-info>* {
+    margin-top: 1.5rem;
+}
+
+.card-type {
+    letter-spacing: .5rem;
+}
+
+.card-name {
+    max-width: 10ch;
+
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-bold);
+    font-size: 3rem;
+    columns: var(--clr-neutral-dark-blue);
+}
+
+.card-des {
+    max-width: 25ch;
+}
+
+.card-prices {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.card-prices--curr {
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-cyan);
+
+    font-size: 2rem;
+}
+
+.card-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1.25rem 5rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-white);
+    background-color: var(--clr-primary-cyan);
+
+    transition: background-color 300ms ease;
+}
+
+.card-btn:hover,
+.card-btn:focus-within {
+    background-color: var(--clr-neutral-dark-blue);
+}
+
+.card-btn:focus-visible {
+    outline: 5px solid var(--clr-neutral-grayish-blue);
+}
+
+@media (max-width: 680px) {
+    .card {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .card-img{
+        display: none;
+    }
+
+    .card-img-mob {
+        display: block;
+    }
+
+    .card-info {
+        padding-inline: 2rem;
+        padding-bottom: 2rem;
+    }
+}
